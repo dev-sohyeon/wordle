@@ -25,27 +25,25 @@
     <button>제출</button>
 
     <script>
-        //정답
         const answer = 'basic';
 
         document.querySelector('button').addEventListener('click', () => {
 
-            let input = document.querySelectorAll('input');
+            let input = document.querySelectorAll('.input');
 
             for(let i = 0; i < 5; i++){
                 if(input[i].value == answer[i]){
                     input[i].style.background = 'green';
-                }else if(answer.includes(input[i].value)){
-                    //includes 문자열 검사
+                }
+                else if(answer.includes(input[i].value)){
                     input[i].style.background = 'yellow';
-                }else{
+                }
+                else{
                     input[i].style.background = 'lightgrey';
                 }
-                //input class 제거
                 input[i].classList.remove('input');
-            }//for
+            }
             
-            //제출 버튼 눌렀을 경우 새로운 input 5개 생성
             var template = `<div>
                                 <input type="text" class="input">
                                 <input type="text" class="input">
